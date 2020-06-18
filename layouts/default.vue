@@ -1,11 +1,13 @@
 <template>
   <div>
     <v-app>
-      <v-app-bar app>
+      <v-app-bar app
+
+      >
         <v-app-bar-nav-icon @click.stop="drawer = !drawer">
         </v-app-bar-nav-icon>
       </v-app-bar>
-      <nuxt />
+      <nuxt class="nuxt-wrapper" />
     </v-app>
   </div>
 </template>
@@ -19,3 +21,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.nuxt-wrapper {
+  padding: 100px 0px;
+}
+</style>
