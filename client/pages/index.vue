@@ -3,23 +3,17 @@
     <v-app>
     <div class="content-wrapper">
       <v-bottom-navigation
-        :value="activeBtn"
+        :value="current"
         grow
         color="teal"
       >
-        <v-btn>
-          <span>キャラ1</span>
+        <v-btn
+          v-for="data in datas"
+          :key="data.id"
+          @click="changeCharacter(data)"
+        >
+          <span>{{ data.name }}</span>
           <!-- <v-icon>mdi-history</v-icon> -->
-        </v-btn>
-
-        <v-btn>
-          <span>キャラ2</span>
-          <!-- <v-icon>mdi-heart</v-icon> -->
-        </v-btn>
-
-        <v-btn>
-          <span>キャラ3</span>
-          <!-- <v-icon>mdi-map-marker</v-icon> -->
         </v-btn>
       </v-bottom-navigation>
       <v-expansion-panels
@@ -29,9 +23,9 @@
         <v-expansion-panel>
           <v-expansion-panel-header>ダイス</v-expansion-panel-header>
           <v-expansion-panel-content>
-            <AbilityCard />
-            <AbilityCard />
-            <AbilityCard />
+            <AbilityCard :data="current"/>
+            <AbilityCard :data="current"/>
+            <AbilityCard :data="current"/>
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -73,6 +67,33 @@ import AbilityCard from "~/components/ui/AbilityCard";
 export default {
   components: {
     AbilityCard
+  },
+  data() {
+    return {
+      current: {
+        name: "Taro"
+      },
+      datas: [
+        {
+          name: "Taro"
+        },
+        {
+          name: "Taro"
+        },
+        {
+          name: "Taro"
+        },
+        {
+          name: "Sato"
+        }
+      ]
+    }
+  },
+  methods: {
+    changeCharacter: function(data) {
+      this.current = data
+      console.log(this.current)
+    }
   }
 }
 </script>

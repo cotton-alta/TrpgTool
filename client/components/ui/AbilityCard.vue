@@ -8,6 +8,7 @@
           outlined
           tile
         >
+          {{ data.name }}
           title
         </v-card>
         <v-row no-gutters>
@@ -39,7 +40,7 @@
 
 <script>
 export default {
-
+  props: ["data"]
 }
 </script>
 
