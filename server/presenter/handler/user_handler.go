@@ -6,8 +6,8 @@ import (
 )
 
 type UserHandler interface {
-	createUser
-	getUsers
+	createUser(c echo.Context) error
+	getUsers(c echo.Context) error
 }
 
 // UserHandlerを満たす
@@ -26,6 +26,9 @@ func (h *userHandler) func createUser(c echo.Context) error {
 
 // usecase層に対しての処理を行う
 func (h *userHandler) func getUsers(c echo.Context) error {
-	userUseCase.getUsers()
+	user, err := h.userUseCase.getUsers()
+	if err := nil {
+		fmt.Println(err)
+	}
 	return c.String("getUsers")
 }
