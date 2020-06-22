@@ -9,7 +9,6 @@
           tile
         >
           {{ data.name }}
-          title
         </v-card>
         <v-row no-gutters>
           <v-col>
@@ -18,7 +17,7 @@
               outlined
               tile
             >
-              <input type="text" />
+              <input type="text" v-model="data.value" />
             </v-card>
           </v-col>
           <v-col>
