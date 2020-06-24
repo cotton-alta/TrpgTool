@@ -16,6 +16,8 @@
       </v-bottom-navigation>
       <DicePanel :datas="current.dice" />
       <BasePanel :datas="current.base" />
+      <!-- 送るデータは後で変更 -->
+      <ArmorPanel :datas="current.base" />
     </div>
     <!-- /.content-wrapper -->
     <div class="side-wrapper">
@@ -30,13 +32,15 @@
 import ThreeCard from "~/components/ui/ThreeCard";
 import DicePanel from "~/components/layouts/DicePanel";
 import BasePanel from "~/components/layouts/BasePanel";
+import ArmorPanel from "~/components/layouts/ArmorPanel";
 import datas from "~/assets/data/users.json";
 
 export default {
   components: {
     ThreeCard,
     DicePanel,
-    BasePanel
+    BasePanel,
+    ArmorPanel
   },
   data() {
     return {

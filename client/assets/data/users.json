@@ -32,7 +32,24 @@
       }
     },
     "base": {
-      "ability": { "name": "能力値", "value": 0 },
+      "first_ability": {
+        "name": "第一能力値",
+        "value": {
+          "stamina": { "name": "体力点", "value": 0 },
+          "soul": { "name": "魂魄点", "value": 0 },
+          "quantity": { "name": "技量点", "value": 0 },
+          "intellectual": { "name": "知力点", "value": 0 }
+        }
+      },
+      "second_ability": {
+        "name": "第二能力値",
+        "value": {
+          "stamina": { "name": "体力点", "value": 0 },
+          "soul": { "name": "魂魄点", "value": 0 },
+          "quantity": { "name": "技量点", "value": 0 },
+          "intellectual": { "name": "知力点", "value": 0 }
+        }
+      },
       "career": { "name": "経歴", "value": 0 }
     }
   },
