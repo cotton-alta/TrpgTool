@@ -30,6 +30,7 @@
 import AbilityCard from "~/components/ui/AbilityCard";
 import DicePanel from "~/components/layouts/DicePanel";
 import BasePanel from "~/components/layouts/BasePanel";
+import datas from "~/assets/data/users.json";
 
 export default {
   components: {
@@ -39,74 +40,31 @@ export default {
   },
   data() {
     return {
+      datas,
       current: {
         name: "Taro",
         dice: {
           ability: { name: "能力値", value: 0 },
-          career: { name: "経歴", value: 0 },
+          career: {
+            name: "経歴",
+            value: {
+              origins: { name: "出自", value: 0 },
+              history: { name: "来歴", value: 0 },
+              chance: { name: "邂逅", value: 0 }
+            }
+          },
           state: { name: "状態", value: 0 }
         },
         base: {
           ability: { name: "能力値", value: 0 },
           career: { name: "経歴", value: 0 }
         }
-      },
-      datas: [
-        {
-          name: "Taro",
-          dice: {
-            ability: { name: "能力値", value: 1 },
-            career: { name: "経歴", value: 0 },
-            state: { name: "状態", value: 0 }
-          },
-          base: {
-            ability: { name: "能力値", value: 0 },
-            career: { name: "経歴", value: 0, state: 0 }
-          }
-        },
-        {
-          name: "Suzuki",
-          dice: {
-            ability: { name: "能力値", value: 2 },
-            career: { name: "経歴", value: 0 },
-            state: { name: "状態", value: 0 }
-          },
-          base: {
-            ability: { name: "能力値", value: 0 },
-            career: { name: "経歴", value: 0, state: 0 }
-          }
-        },
-        {
-          name: "Kato",
-          dice: {
-            ability: { name: "能力値", value: 3 },
-            career: { name: "経歴", value: 0 },
-            state: { name: "状態", value: 0 }
-          },
-          base: {
-            ability: { name: "能力値", value: 0 },
-            career: { name: "経歴", value: 0, state: 0 }
-          }
-        },
-        {
-          name: "Sato",
-          dice: {
-            ability: { name: "能力値", value: 4 },
-            career: { name: "経歴", value: 0 },
-            state: { name: "状態", value: 0 }
-          },
-          base: {
-            ability: { name: "能力値", value: 0 },
-            career: { name: "経歴", value: 0, state: 0 }
-          }
-        }
-      ]
+      }
     }
   },
   methods: {
     changeCharacter: function(data) {
       this.current = data
-      console.log(this.current)
     }
   }
 }
@@ -120,8 +78,4 @@ export default {
   border-radius: 10px;
   margin: 0 auto;
 }
-
-// .panel-wrapper {
-//   margin: 30px auto;
-// }
 </style>

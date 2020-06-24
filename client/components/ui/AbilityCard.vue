@@ -11,22 +11,20 @@
           {{ data.name }}
         </v-card>
         <v-row no-gutters>
-          <v-col>
+          <v-col v-for="value in data.value" :key="value.id">
             <v-card
               class="card-content"
               outlined
               tile
             >
-              <input type="text" v-model="data.value" />
+              {{ value.name }}
             </v-card>
-          </v-col>
-          <v-col>
             <v-card
               class="card-content"
               outlined
               tile
             >
-              <input type="text" />
+              <input type="text" v-model="value.value" />
             </v-card>
           </v-col>
         </v-row>
@@ -46,7 +44,7 @@ export default {
 <style lang="scss" scoped>
 .card {
   &-wrapper {
-    height: 80px;
+    // height: 80px;
     margin: 20px;
   }
   &-title {
@@ -58,9 +56,10 @@ export default {
     input {
       height: 100%;
       width: 100%;
-      text-align: center;
       border: none;
+      text-align: center;
     }
+    text-align: center;
     line-height: 40px;
     height: 40px;
   }

@@ -1,8 +1,8 @@
 <template>
   <div class="panel-wrapper">
+        <!-- class="panel-wrapper" -->
       <v-expansion-panels
         accordion
-        class="panel-wrapper"
       >
         <v-expansion-panel>
           <v-expansion-panel-header>ダイス</v-expansion-panel-header>
