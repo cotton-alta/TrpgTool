@@ -8,7 +8,7 @@
           outlined
           tile
         >
-          {{ data.name }}
+          {{ headline }}
         </v-card>
         <v-row no-gutters>
           <v-col v-for="value in data.value" :key="value.id">
@@ -37,7 +37,10 @@
 
 <script>
 export default {
-  props: ["data"]
+  props: [
+    "data",
+    "headline"
+  ]
 }
 </script>
 
@@ -45,7 +48,7 @@ export default {
 .card {
   &-wrapper {
     // height: 80px;
-    margin: 20px;
+    margin: 10px;
   }
   &-title {
     line-height: 40px;

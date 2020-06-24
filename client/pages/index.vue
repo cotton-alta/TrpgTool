@@ -27,14 +27,14 @@
 </template>
 
 <script>
-import AbilityCard from "~/components/ui/AbilityCard";
+import ThreeCard from "~/components/ui/ThreeCard";
 import DicePanel from "~/components/layouts/DicePanel";
 import BasePanel from "~/components/layouts/BasePanel";
 import datas from "~/assets/data/users.json";
 
 export default {
   components: {
-    AbilityCard,
+    ThreeCard,
     DicePanel,
     BasePanel
   },

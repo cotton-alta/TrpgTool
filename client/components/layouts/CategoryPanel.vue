@@ -7,7 +7,7 @@
         <v-expansion-panel>
           <v-expansion-panel-header>Item</v-expansion-panel-header>
           <v-expansion-panel-content>
-            <AbilityCard v-for="data in datas" :key="data.id" :data="data"/>
+            <ThreeCard v-for="data in datas" :key="data.id" :data="data"/>
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import AbilityCard from "~/components/ui/AbilityCard";
+import ThreeCard from "~/components/ui/ThreeCard";
 
 export default {
   props: ["datas"],
   components: {
-    AbilityCard
+    ThreeCard
   }
 }
 </script>
