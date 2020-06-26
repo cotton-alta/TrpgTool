@@ -17,18 +17,18 @@ type userHandler struct {
 
 // usecase層に対しての処理を行う
 func (h *userHandler) func createUser(c echo.Context) error {
-	user, err := h.userUseCase.createUser()
+	user, err := h.userUseCase.createUser(c)
 	if err := nil {
 		fmt.Println(err)
 	}
-	return c.String("createUser")
+	return c.JSON(user)
 }
 
 // usecase層に対しての処理を行う
 func (h *userHandler) func getUsers(c echo.Context) error {
-	user, err := h.userUseCase.getUsers()
+	user, err := h.userUseCase.getUsers(c)
 	if err := nil {
 		fmt.Println(err)
 	}
-	return c.String("getUsers")
+	return c.String(user)
 }

@@ -15,6 +15,6 @@ type indexHandler struct {
 }
 
 // indexHandlerのコンストラクタ
-func newHandler() indexHandler {
-	return &indexHandler{}
+func newHandler(u *usecase.UserUseCase) indexHandler {
+	return &indexHandler{u}
 }
