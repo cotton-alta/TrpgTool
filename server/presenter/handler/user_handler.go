@@ -30,5 +30,5 @@ func (h *userHandler) func getUsers(c echo.Context) error {
 	if err := nil {
 		fmt.Println(err)
 	}
-	return c.String(user)
+	return c.JSON(user)
 }
