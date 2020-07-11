@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="container">
     <v-app>
+    <SideButton />
     <div class="content-wrapper">
       <v-bottom-navigation
         grow
@@ -20,16 +21,13 @@
       <ArmorPanel :datas="current.base" />
     </div>
     <!-- /.content-wrapper -->
-    <div class="side-wrapper">
-
-    </div>
-    <!-- /.side-wrapper -->
     </v-app>
   </div>
 </template>
 
 <script>
 import ThreeCard from "~/components/ui/ThreeCard";
+import SideButton from "~/components/ui/SideButton";
 import DicePanel from "~/components/layouts/DicePanel";
 import BasePanel from "~/components/layouts/BasePanel";
 import ArmorPanel from "~/components/layouts/ArmorPanel";
@@ -40,7 +38,8 @@ export default {
     ThreeCard,
     DicePanel,
     BasePanel,
-    ArmorPanel
+    ArmorPanel,
+    SideButton
   },
   data() {
     return {
@@ -80,6 +79,8 @@ export default {
   max-width: 1000px;
   min-height: 100vh;
   border-radius: 10px;
+  position: relative;
   margin: 0 auto;
+  top: -150px;
 }
 </style>
