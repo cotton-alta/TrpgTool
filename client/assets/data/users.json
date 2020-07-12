@@ -50,7 +50,11 @@
           "intellectual": { "name": "知力点", "value": 0 }
         }
       },
-      "career": { "name": "経歴", "value": 0 }
+      "career": { "name": "経歴", "value": 0 },
+      "overview": {
+        "name": "キャラ概要",
+        "value": "キャラ概要です。"
+      }
     }
   },
   {

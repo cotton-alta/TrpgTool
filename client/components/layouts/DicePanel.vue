@@ -8,8 +8,8 @@
           <v-expansion-panel-header>ダイス</v-expansion-panel-header>
           <v-expansion-panel-content>
             <FourCard :headline="headline.ability" :data="datas.ability"/>
-            <ThreeCard :headline="headline.career" :data="career"/>
-            <ThreeCard :headline="headline.state" :data="state"/>
+            <ThreeCard :headline="headline.career" :data="datas.career"/>
+            <ThreeCard :headline="headline.state" :data="datas.state"/>
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -33,18 +33,7 @@ export default {
         ability: "能力値",
         career: "経歴",
         state: "状態"
-      },
-      career: 0,
-      state: 0
-    }
-  },
-  methods: {
-    SpinDice_2d6: function() {
-      this.career = Math.floor(Math.random()) + 1;
-      this.state = Math.floor(Math.random()) + 1;
-    },
-    SpinDice_1d6: function() {
-
+      }
     }
   }
 }

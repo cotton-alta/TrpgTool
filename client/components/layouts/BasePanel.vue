@@ -9,8 +9,9 @@
           <v-expansion-panel-content>
             <ThreeCard :headline="headline.first_ability" :data="datas.first_ability"/>
             <ThreeCard :headline="headline.second_ability" :data="datas.second_ability"/>
-            <TwoApartCard :data="datas" />
-            <TwoApartCard :data="datas" />
+            <!-- <TwoApartCard :data="datas" />
+            <TwoApartCard :data="datas" /> -->
+            <OverviewCard :headline="headline.overview" :data="datas.overview" />
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -21,18 +22,21 @@
 <script>
 import ThreeCard from "~/components/ui/ThreeCard";
 import TwoApartCard from "~/components/ui/TwoApartCard";
+import OverviewCard from "~/components/ui/OverviewCard";
 
 export default {
   props: ["datas"],
   components: {
     ThreeCard,
-    TwoApartCard
+    TwoApartCard,
+    OverviewCard
   },
   data() {
     return {
       headline: {
         first_ability: "第一能力値",
-        second_ability: "第二能力値"
+        second_ability: "第二能力値",
+        overview: "キャラ概要"
       }
     }
   }
