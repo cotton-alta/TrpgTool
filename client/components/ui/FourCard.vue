@@ -31,7 +31,7 @@
               outlined
               tile
             >
-              <input type="text" v-model="value.value" />
+              <input type="text" />
             </v-card>
           </v-col>
         </v-row>

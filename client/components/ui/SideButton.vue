@@ -3,19 +3,10 @@
       <v-btn
         class="side-button mx-2"
         fab dark color="teal"
-        @click="SpinDice_2d6"
+        @click="abilityRoll"
       >
         <v-icon dark>mdi-format-list-bulleted-square</v-icon>
       </v-btn>
-      <v-btn 
-        class="side-button mx-2"
-        fab dark color="teal"
-        @click="SpinDice_1d6"
-      >
-        <v-icon dark>mdi-format-list-bulleted-square</v-icon>
-      </v-btn>
-      {{ career }}
-      {{ state }}
   </div>
   <!-- /.side-wrapper -->
 </template>
@@ -30,14 +21,13 @@ export default {
     }
   },
   methods: {
-    SpinDice_2d6: function() {
-      this.career = Math.floor(Math.random() * 10) + 1;
-      this.state = Math.floor(Math.random() * 10) + 1;
-      console.log(this.career);
-      console.log(this.state);
+    abilityRoll: function() {
+      this.$store.dispatch("user/abilityRoll");
+      this.$store.dispatch("user/careerRoll");
+      this.$store.dispatch("user/stateRoll");
     },
     SpinDice_1d6: function() {
-      this.ability = Math.floor(Math.random() * 6) + 1;
+      // this.ability = Math.floor(Math.random() * 6) + 1;
       console.log(this.ability);
     }
   }

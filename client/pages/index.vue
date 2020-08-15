@@ -22,6 +22,7 @@
     </div>
     <!-- /.content-wrapper -->
     </v-app>
+    <!-- {{ getDice }} -->
   </div>
 </template>
 
@@ -33,6 +34,7 @@ import BasePanel from "~/components/layouts/BasePanel";
 import ArmorPanel from "~/components/layouts/ArmorPanel";
 import datas from "~/assets/data/users.json";
 import dice from "~/plugins/dice";
+import mapGetters from "vuex";
 
 export default {
   components: {
@@ -82,12 +84,10 @@ export default {
       this.current = data;
       this.$store.dispatch("user/userChange", data);
       console.log(this.$store.state.user);
-    },
-    abilityRoll: function() {
-      Object.keys(this.ability.value).forEach(key => {
-        this.ability.value[key].value = dice("1d6");
-      });
     }
+  },
+  computed: {
+    // ...mapGetters("user", ["getDice"])
   }
 }
 </script>
