@@ -32,6 +32,7 @@ import DicePanel from "~/components/layouts/DicePanel";
 import BasePanel from "~/components/layouts/BasePanel";
 import ArmorPanel from "~/components/layouts/ArmorPanel";
 import datas from "~/assets/data/users.json";
+import dice from "~/plugins/dice";
 
 export default {
   components: {
@@ -47,7 +48,18 @@ export default {
       current: {
         name: "Taro",
         dice: {
-          ability: { name: "能力値", value: 0 },
+          ability: {
+            name: "能力値",
+            value: {
+              stamina: { name: "体力点", value: 0 },
+              soul: { name: "魂魄点", value: 0 },
+              quantity: { name: "技量点", value: 0 },
+              intellectual: { name: "知力点", value: 0 },
+              concentrate: { name: "集中点", value: 0 },
+              enduring: { name: "持久点", value: 0 },
+              reflections: { name: "反射点", value: 0 }
+            }
+          },
           career: {
             name: "経歴",
             value: {
@@ -67,7 +79,14 @@ export default {
   },
   methods: {
     changeCharacter: function(data) {
-      this.current = data
+      this.current = data;
+      this.$store.dispatch("user/userChange", data);
+      console.log(this.$store.state.user);
+    },
+    abilityRoll: function() {
+      Object.keys(this.ability.value).forEach(key => {
+        this.ability.value[key].value = dice("1d6");
+      });
     }
   }
 }
