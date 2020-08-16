@@ -54,6 +54,11 @@
       "overview": {
         "name": "キャラ概要",
         "value": "キャラ概要です。"
+      },
+      "basic": {
+        "tribe": { "name": "種族", "value": "只人" },
+        "gender": { "name": "性別", "value": "男" },
+        "age": { "name": "年齢", "value": 20 }
       }
     }
   },

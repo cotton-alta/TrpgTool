@@ -12,6 +12,7 @@
             <!-- <TwoApartCard :data="datas" />
             <TwoApartCard :data="datas" /> -->
             <OverviewCard :headline="headline.overview" :data="datas.overview" />
+            <BasicCard :data="datas.basic" />
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -23,13 +24,15 @@
 import ThreeCard from "~/components/ui/ThreeCard";
 import TwoApartCard from "~/components/ui/TwoApartCard";
 import OverviewCard from "~/components/ui/OverviewCard";
+import BasicCard from "~/components/ui/BasicCard";
 
 export default {
   props: ["datas"],
   components: {
     ThreeCard,
     TwoApartCard,
-    OverviewCard
+    OverviewCard,
+    BasicCard
   },
   data() {
     return {
